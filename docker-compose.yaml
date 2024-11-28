@@ -36,7 +36,7 @@ services:
       - source_postgres
       - destination_postgres
   dbt:
-    image: ghcr.io/dbt-labs/dbt-postgres:1.47
+    image: ghcr.io/dbt-labs/dbt-postgres:1.4.7
     command:
       [
         "run",
@@ -48,10 +48,14 @@ services:
     networks:
       - elt_network
     volumes:
-      - ./custompostgres:/dbt
+      - ./custom_postgres:/dbt
       - ~/.dbt:/root
     depends_on:
-      - elt_script
+      elt_script:
+       condition: service_completed_successfully
+    environment:
+      DBT-PROFILE: default
+      DBT_TARGET: dev
 
 networks:
   elt_network:
