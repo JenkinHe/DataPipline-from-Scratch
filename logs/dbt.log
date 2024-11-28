@@ -1,0 +1,30 @@
+[0m17:21:53.449525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F24AFFF80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F24AFF9E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F24AFF8F0>]}
+
+
+============================== 17:21:53.457808 | 434a591b-ac1c-4750-bdae-964f16255599 ==============================
+[0m17:21:53.457808 [info ] [MainThread]: Running with dbt=1.6.2
+[0m17:21:53.458814 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Draco\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:21:53.459818 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': WindowsPath('C:/Users/Draco/.dbt')}
+[0m17:21:53.460315 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m17:21:59.601806 [debug] [MainThread]: Starter project path: C:\Users\Draco\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\include\starter_project
+[0m17:21:59.625350 [info ] [MainThread]: 
+Your new dbt project "custom_postgres" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:21:59.628423 [info ] [MainThread]: Setting up your profile.
+[0m17:22:08.524689 [info ] [MainThread]: Profile custom_postgres written to C:\Users\Draco\.dbt\profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m17:22:08.525184 [debug] [MainThread]: Command `dbt init` succeeded at 17:22:08.525184 after 15.15 seconds
+[0m17:22:08.526191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F246040E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F246B07A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F24931A30>]}
+[0m17:22:08.526699 [debug] [MainThread]: Flushing usage events
