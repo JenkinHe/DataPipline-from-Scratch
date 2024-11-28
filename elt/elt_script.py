@@ -1,9 +1,9 @@
 import subprocess
 import time
 
-def wait_for_postgres(host, max_retries=5,delay_seconds=5)
+def wait_for_postgres(host, max_retries=5,delay_seconds=5):
     retries =0
-    while retires <max_retries:
+    while retries < max_retries:
         try:
             result= subprocess.run(
                 ["pg_isready","-h",host], check=True,capture_output=True,text=True)
@@ -14,7 +14,7 @@ def wait_for_postgres(host, max_retries=5,delay_seconds=5)
             print(f"Error connecting to Postgres :{e}")
             retries +=1
             print(
-                f"Retrying in {delay_seconds} seconds...(Attempt {retires/max_retries})"
+                f"Retrying in {delay_seconds} seconds...(Attempt {retries/max_retries})"
             )
             time.sleep(delay_seconds)
     print("Max retries reached. Exiting")
@@ -36,13 +36,13 @@ destination_config ={
     'dbname' :'destination_db',
     'user' :'postgres',
     'password':'secret',
-    'host' :'destination_db'
+    'host' :'destination_postgres'
 }
 
 dump_command =[
     'pg_dump',
     '-h', source_config['host'],
-    '-u', source_config['user'],
+    '-U', source_config['user'],
     '-d', source_config['dbname'],
     '-f', 'data_dump.sql',
     '-w'
@@ -55,7 +55,7 @@ subprocess.run(dump_command,env=subprocess_env,check=True)
 load_command =[
     'psql',
     '-h', destination_config['host'],
-    '-u', destination_config['user'],
+    '-U', destination_config['user'],
     '-d', destination_config['dbname'],
     '-a','-f', 'data_dump.sql', 
 ]
